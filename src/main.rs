@@ -1,29 +1,18 @@
-extern crate sysinfo;
+extern crate winapi;
 extern crate winreg;
 extern crate wmi;
+extern crate proclist;
 
+use winreg::enums::HKEY_LOCAL_MACHINE;
+use winreg::RegKey;
+use wmi::{COMLibrary, Variant, WMIConnection};
 use std::collections::HashMap;
 
-use sysinfo::{SystemExt, System, ProcessExt};
-use winreg::enums::*;
-use winreg::RegKey;
-use wmi::{COMLibrary, WMIConnection, Variant};
-
 fn main() {
-
-    let mut sys = System::new();
-
-    sys.refresh_all();
-
-    println!("\n\n================= PROCESSES =================");
-    for (pid, proc_) in sys.get_process_list() {
-        println!("{}:{} => status: {:?}", pid, proc_.name(), proc_.status());
+    println!("\n\n================== PROCESSES ==================");
+    for process_info in proclist::iterate_processes_info().filter_map(|r| r.ok()) {
+        println!("[name]: {}, [pid]: {}", process_info.name, process_info.pid);
     }
-
-    println!("\n\n=================== MEMORY ===================");
-    println!("Total Memory: {} kB", sys.get_total_memory());
-    println!("Used Memory: {} kB", sys.get_used_memory());
-
 
     println!("\n\n================== REGISTRY ==================");
     let hklm = RegKey::predef(HKEY_LOCAL_MACHINE);
@@ -39,7 +28,6 @@ fn main() {
         "last_write_time as winapi::um::minwinbase::SYSTEMTIME = {}-{:02}-{:02} {:02}:{:02}:{:02}",
         mt.wYear, mt.wMonth, mt.wDay, mt.wHour, mt.wMinute, mt.wSecond
     );
-
 
 
     println!("\n\n===================== WMI ====================");
