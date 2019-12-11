@@ -3,13 +3,49 @@ pub mod lists {
         pub name: String,
         pub description: String,
     }
-    
-    // Implementation block, all `Point` methods go in here
+
     impl ScoutProcess {
-        // Another static method, taking two arguments:
         pub fn new(name: &str, description: &str) -> ScoutProcess {
             ScoutProcess { name: name.to_string().to_lowercase(), description: description.to_string()}
         }
+    }
+
+    // Processes taken from Seatbelt: https://github.com/GhostPack/Seatbelt/blob/master/Seatbelt/Program.cs
+    pub fn browser_processes() -> Vec<ScoutProcess> {
+        vec![
+            ScoutProcess::new("chrome", "Google Chrome"),
+            ScoutProcess::new("iexplore", "Microsoft Internet Explorer"),
+            ScoutProcess::new("MicrosoftEdge", "Microsoft Edge"),
+            ScoutProcess::new("firefox", "Mozilla Firefox")
+        ]
+    }
+
+    pub fn interesting_processes() -> Vec<ScoutProcess> {
+        vec![
+            ScoutProcess::new("CmRcService", "Configuration Manager Remote Control Service"),
+            ScoutProcess::new("ftp", "Misc. FTP client"),
+            ScoutProcess::new("LMIGuardian", "LogMeIn Reporter"),
+            ScoutProcess::new("LogMeInSystray", "LogMeIn System Tray"),
+            ScoutProcess::new("RaMaint", "LogMeIn maintenance sevice"),
+            ScoutProcess::new("mmc", "Microsoft Management Console"),
+            ScoutProcess::new("putty", "Putty SSH client"),
+            ScoutProcess::new("pscp", "Putty SCP client"),
+            ScoutProcess::new("psftp", "Putty SFTP client"),
+            ScoutProcess::new("puttytel", "Putty Telnet client"),
+            ScoutProcess::new("plink", "Putty CLI client"),
+            ScoutProcess::new("pageant", "Putty SSH auth agent"),
+            ScoutProcess::new("kitty", "Kitty SSH client"),
+            ScoutProcess::new("telnet", "Misc. Telnet client"),
+            ScoutProcess::new("SecureCRT", "SecureCRT SSH/Telnet client"),
+            ScoutProcess::new("TeamViewer", "TeamViewer"),
+            ScoutProcess::new("tv_x64", "TeamViewer x64 remote control"),
+            ScoutProcess::new("tv_w32", "TeamViewer x86 remote control"),
+            ScoutProcess::new("keepass", "KeePass password vault"),
+            ScoutProcess::new("mstsc", "Microsoft RDP client"),
+            ScoutProcess::new("vnc", "Possible VNC client"),
+            ScoutProcess::new("powershell", "PowerShell host process"),
+            ScoutProcess::new("cmd", "Command Prompt"),
+        ]
     }
 
     pub fn defensive_processes() -> Vec<ScoutProcess> {

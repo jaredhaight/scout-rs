@@ -13,9 +13,18 @@ mod processes;
 fn main() {
     println!("\n\n================== PROCESSES ==================");
 
-    for process_info in proclist::iterate_processes_info().filter_map(|r| r.ok()) {
+    let process_infos = proclist::iterate_processes_info().filter_map(|r| r.ok());
+    for process_info in process_infos {
         match processes::lists::defensive_processes().iter().find(|&process| process.name.to_lowercase() == process_info.name.to_lowercase()) {
             Some(inner) => println!("[Defensive Process] ({}) {} - {}", process_info.pid, process_info.name, inner.description),
+            None => (),
+        }
+        match processes::lists::interesting_processes().iter().find(|&process| process.name.to_lowercase() == process_info.name.to_lowercase()) {
+            Some(inner) => println!("[Interesting Process] ({}) {} - {}", process_info.pid, process_info.name, inner.description),
+            None => (),
+        }
+        match processes::lists::browser_processes().iter().find(|&process| process.name.to_lowercase() == process_info.name.to_lowercase()) {
+            Some(inner) => println!("[Browser Process] ({}) {} - {}", process_info.pid, process_info.name, inner.description),
             None => (),
         }
     }
