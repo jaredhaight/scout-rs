@@ -13,38 +13,38 @@ pub mod lists {
     // Processes taken from Seatbelt: https://github.com/GhostPack/Seatbelt/blob/master/Seatbelt/Program.cs
     pub fn browser_processes() -> Vec<ScoutProcess> {
         vec![
-            ScoutProcess::new("chrome", "Google Chrome"),
-            ScoutProcess::new("iexplore", "Microsoft Internet Explorer"),
-            ScoutProcess::new("MicrosoftEdge", "Microsoft Edge"),
-            ScoutProcess::new("firefox", "Mozilla Firefox")
+            ScoutProcess::new("chrome.exe", "Google Chrome"),
+            ScoutProcess::new("iexplore.exe", "Microsoft Internet Explorer"),
+            ScoutProcess::new("MicrosoftEdge.exe", "Microsoft Edge"),
+            ScoutProcess::new("firefox.exe", "Mozilla Firefox")
         ]
     }
 
     pub fn interesting_processes() -> Vec<ScoutProcess> {
         vec![
-            ScoutProcess::new("CmRcService", "Configuration Manager Remote Control Service"),
-            ScoutProcess::new("ftp", "Misc. FTP client"),
-            ScoutProcess::new("LMIGuardian", "LogMeIn Reporter"),
-            ScoutProcess::new("LogMeInSystray", "LogMeIn System Tray"),
-            ScoutProcess::new("RaMaint", "LogMeIn maintenance sevice"),
-            ScoutProcess::new("mmc", "Microsoft Management Console"),
-            ScoutProcess::new("putty", "Putty SSH client"),
-            ScoutProcess::new("pscp", "Putty SCP client"),
-            ScoutProcess::new("psftp", "Putty SFTP client"),
-            ScoutProcess::new("puttytel", "Putty Telnet client"),
-            ScoutProcess::new("plink", "Putty CLI client"),
-            ScoutProcess::new("pageant", "Putty SSH auth agent"),
-            ScoutProcess::new("kitty", "Kitty SSH client"),
-            ScoutProcess::new("telnet", "Misc. Telnet client"),
-            ScoutProcess::new("SecureCRT", "SecureCRT SSH/Telnet client"),
-            ScoutProcess::new("TeamViewer", "TeamViewer"),
+            ScoutProcess::new("CmRcService.exe", "Configuration Manager Remote Control Service"),
+            ScoutProcess::new("ftp.exe", "Misc. FTP client"),
+            ScoutProcess::new("LMIGuardian.exe", "LogMeIn Reporter"),
+            ScoutProcess::new("LogMeInSystray.exe", "LogMeIn System Tray"),
+            ScoutProcess::new("RaMaint.exe", "LogMeIn maintenance sevice"),
+            ScoutProcess::new("mmc.exe", "Microsoft Management Console"),
+            ScoutProcess::new("putty.exe", "Putty SSH client"),
+            ScoutProcess::new("pscp.exe", "Putty SCP client"),
+            ScoutProcess::new("psftp.exe", "Putty SFTP client"),
+            ScoutProcess::new("puttytel.exe", "Putty Telnet client"),
+            ScoutProcess::new("plink.exe", "Putty CLI client"),
+            ScoutProcess::new("pageant.exe", "Putty SSH auth agent"),
+            ScoutProcess::new("kitty.exe", "Kitty SSH client"),
+            ScoutProcess::new("telnet.exe", "Misc. Telnet client"),
+            ScoutProcess::new("SecureCRT.exe", "SecureCRT SSH/Telnet client"),
+            ScoutProcess::new("TeamViewer.exe", "TeamViewer"),
             ScoutProcess::new("tv_x64", "TeamViewer x64 remote control"),
             ScoutProcess::new("tv_w32", "TeamViewer x86 remote control"),
-            ScoutProcess::new("keepass", "KeePass password vault"),
-            ScoutProcess::new("mstsc", "Microsoft RDP client"),
-            ScoutProcess::new("vnc", "Possible VNC client"),
-            ScoutProcess::new("powershell", "PowerShell host process"),
-            ScoutProcess::new("cmd", "Command Prompt"),
+            ScoutProcess::new("keepass.exe", "KeePass password vault"),
+            ScoutProcess::new("mstsc.exe", "Microsoft RDP client"),
+            ScoutProcess::new("vnc.exe", "Possible VNC client"),
+            ScoutProcess::new("powershell.exe", "PowerShell host process"),
+            ScoutProcess::new("cmd.exe", "Command Prompt"),
         ]
     }
 
