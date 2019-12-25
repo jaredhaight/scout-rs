@@ -1,7 +1,7 @@
 [package]
 name = "scout"
 version = "0.1.0"
-authors = ["Jared Haight <1220886+jaredhaight@users.noreply.github.com>"]
+authors = ["@jaredhaight"]
 edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
@@ -17,3 +17,5 @@ winapi = "0.3.8"
 winreg = "0.6.2"
 proclist = "0.9.2"
 wmi = "0.4.6"
+serde = "1.0.104"
+failure = "0.1.6"
