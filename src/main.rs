@@ -2,7 +2,6 @@ extern crate winapi;
 extern crate winreg;
 extern crate wmi;
 extern crate proclist;
-extern crate serde;
 
 use std::env;
 use std::collections::HashMap;
