@@ -6,7 +6,10 @@ pub mod lists {
 
     impl ScoutProcess {
         pub fn new(name: &str, description: &str) -> ScoutProcess {
-            ScoutProcess { name: name.to_string().to_lowercase(), description: description.to_string()}
+            ScoutProcess {
+                name: name.to_string().to_lowercase(),
+                description: description.to_string(),
+            }
         }
     }
 
@@ -16,13 +19,16 @@ pub mod lists {
             ScoutProcess::new("chrome.exe", "Google Chrome"),
             ScoutProcess::new("iexplore.exe", "Microsoft Internet Explorer"),
             ScoutProcess::new("MicrosoftEdge.exe", "Microsoft Edge"),
-            ScoutProcess::new("firefox.exe", "Mozilla Firefox")
+            ScoutProcess::new("firefox.exe", "Mozilla Firefox"),
         ]
     }
 
     pub fn interesting_processes() -> Vec<ScoutProcess> {
         vec![
-            ScoutProcess::new("CmRcService.exe", "Configuration Manager Remote Control Service"),
+            ScoutProcess::new(
+                "CmRcService.exe",
+                "Configuration Manager Remote Control Service",
+            ),
             ScoutProcess::new("ftp.exe", "Misc. FTP client"),
             ScoutProcess::new("LMIGuardian.exe", "LogMeIn Reporter"),
             ScoutProcess::new("LogMeInSystray.exe", "LogMeIn System Tray"),
